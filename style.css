@@ -77,7 +77,7 @@ section {
 
 }
 
-.bandeira {
+.bandeira, .bandeira-convertida {
   width: 64px;
   height: 64px;
 }
