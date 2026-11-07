@@ -250,6 +250,11 @@ function changeCurrency() {
         currencyImage.src = "./assets/libra.png"
     }
 
+    if (currencySelect.value === "real") {
+        currencyName.innerHTML = "Real"
+        currencyImage.src = "./assets/real.png"
+    }
+
     convertValues()
 }
 
