@@ -169,7 +169,6 @@ function convertValues() {
                 style: "currency",
                 currency: "USD"
             }).format(inputCurrencyValue / dolarToday)
-
         }
 
         if (currencySelect.value === "euro") {
@@ -206,26 +205,27 @@ function changeCurrency() {
 
     const currencyName = document.querySelector("#currency-name")
     const currencyImage = document.querySelector(".bandeira-convertida")
+    const bandeiraCorverte = document.querySelector(".bandeira-de")
 
     //converterDe
     if (converterDe.value === "dolar") {
         currencyName.innerHTML = 'Dólar americano'
-        currencyImage.src = "./assets/dolar.png"
+        bandeiraCorverte.src = "./assets/dolar.png"
     }
 
     if (converterDe.value === "euro") {
         currencyName.innerHTML = 'Euro'
-        currencyImage.src = "./assets/euro.png"
+        bandeiraCorverte.src = "./assets/euro.png"
     }
 
     if (converterDe.value === "bitcoin") {
         currencyName.innerHTML = "BitCoin"
-        currencyImage.src = "./assets/bitcoin.png"
+        bandeiraCorverte.src = "./assets/bitcoin.png"
     }
 
     if (converterDe.value === "libra") {
         currencyName.innerHTML = "Libra"
-        currencyImage.src = "./assets/libra.png"
+        bandeiraCorverte.src = "./assets/libra.png"
     }
 
 
@@ -259,4 +259,5 @@ function changeCurrency() {
 }
 
 currencySelect.addEventListener("change", changeCurrency)
+converterDe.addEventListener("change", changeCurrency)
 convertButton.addEventListener("click", convertValues)
