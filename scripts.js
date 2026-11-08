@@ -1,6 +1,7 @@
 const convertButton = document.querySelector(".convert-button")
 const currencySelect = document.querySelector(".currency-select")
 const converterDe = document.querySelector(".converter-de")
+const paragrafoCurrency = document.querySelector(".currency")
 
 
 function convertValues() {
@@ -8,13 +9,14 @@ function convertValues() {
     const currencyValeuToConvert = document.querySelector(".currency-value-to-convert") // Valor em Real
     const currencyValueConverted = document.querySelector(".currency-value") //Outras moedas
 
-    const dolarToday = 5.7
+    const dolarToday = 5
     const euro = 6.2
     const bitcoin = 10000
     const libra = 7.12
 
     if (converterDe.value === "real") {
         if (currencySelect.value == "dolar") {
+            paragrafoCurrency.innerHTML = "Real"
             currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
                 style: "currency",
                 currency: "USD"
@@ -23,6 +25,7 @@ function convertValues() {
         }
 
         if (currencySelect.value === "euro") {
+            paragrafoCurrency.innerHTML = "Real"
             currencyValueConverted.innerHTML = new Intl.NumberFormat("de-De", {
                 style: "currency",
                 currency: "EUR"
@@ -30,6 +33,7 @@ function convertValues() {
         }
 
         if (currencySelect.value === "bitcoin") {
+            paragrafoCurrency.innerHTML = "Real"
             currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
                 style: "currency",
                 currency: "BTC"
@@ -37,6 +41,7 @@ function convertValues() {
         }
 
         if (currencySelect.value === "libra") {
+            paragrafoCurrency.innerHTML = "Real"
             currencyValueConverted.innerHTML = new Intl.NumberFormat("en-GB", {
                 style: "currency",
                 currency: "GBP"
@@ -48,10 +53,12 @@ function convertValues() {
             currency: "BRL"
         }).format(inputCurrencyValue)
 
+
+
     }
     //SELECT = DOLAR
     if (converterDe.value === "dolar") {
-
+        paragrafoCurrency.innerHTML = "Dolar"
         if (currencySelect.value == "real") {
             currencyValueConverted.innerHTML = new Intl.NumberFormat("pt-BR", {
                 style: "currency",
@@ -81,15 +88,20 @@ function convertValues() {
             }).format(inputCurrencyValue / libra)
         }
 
-        currencyValeuToConvert.innerHTML = new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "USD"
-        }).format(inputCurrencyValue)
+        if (currencySelect.value == "dolar") {
+            currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD"
+            }).format(inputCurrencyValue)
+
+        }
+
 
     }
 
     //Select EURO
     if (converterDe.value === "euro") {
+        paragrafoCurrency.innerHTML = "Euro"
         if (currencySelect.value == "dolar") {
             currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
                 style: "currency",
@@ -127,6 +139,7 @@ function convertValues() {
 
     //SELECT BITOCOIN
     if (converterDe.value === "bitcoin") {
+        paragrafoCurrency.innerHTML = "BitCoin"
         if (currencySelect.value == "dolar") {
             currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
                 style: "currency",
@@ -164,6 +177,7 @@ function convertValues() {
 
 
     if (converterDe.value === "libra") {
+        paragrafoCurrency.innerHTML = "Libra"
         if (currencySelect.value === "dolar") {
             currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
                 style: "currency",
@@ -208,6 +222,11 @@ function changeCurrency() {
     const bandeiraCorverte = document.querySelector(".bandeira-de")
 
     //converterDe
+    if(converterDe.value = "real") {
+        currencyName.innerHTML = "Real"
+        bandeiraCorverte.src = "./assets/real.png"
+    }
+
     if (converterDe.value === "dolar") {
         currencyName.innerHTML = 'Dólar americano'
         bandeiraCorverte.src = "./assets/dolar.png"
