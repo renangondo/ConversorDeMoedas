@@ -1,7 +1,7 @@
 const convertButton = document.querySelector(".convert-button")
 const currencySelect = document.querySelector(".currency-select")
 const converterDe = document.querySelector(".converter-de")
-const paragrafoCurrency = document.querySelector(".currency")
+
 
 
 function convertValues() {
@@ -25,7 +25,6 @@ function convertValues() {
         }
 
         if (currencySelect.value === "euro") {
-            paragrafoCurrency.innerHTML = "Real"
             currencyValueConverted.innerHTML = new Intl.NumberFormat("de-De", {
                 style: "currency",
                 currency: "EUR"
@@ -33,7 +32,6 @@ function convertValues() {
         }
 
         if (currencySelect.value === "bitcoin") {
-            paragrafoCurrency.innerHTML = "Real"
             currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
                 style: "currency",
                 currency: "BTC"
@@ -41,7 +39,6 @@ function convertValues() {
         }
 
         if (currencySelect.value === "libra") {
-            paragrafoCurrency.innerHTML = "Real"
             currencyValueConverted.innerHTML = new Intl.NumberFormat("en-GB", {
                 style: "currency",
                 currency: "GBP"
@@ -58,7 +55,6 @@ function convertValues() {
     }
     //SELECT = DOLAR
     if (converterDe.value === "dolar") {
-        paragrafoCurrency.innerHTML = "Dolar"
         if (currencySelect.value == "real") {
             currencyValueConverted.innerHTML = new Intl.NumberFormat("pt-BR", {
                 style: "currency",
@@ -101,7 +97,6 @@ function convertValues() {
 
     //Select EURO
     if (converterDe.value === "euro") {
-        paragrafoCurrency.innerHTML = "Euro"
         if (currencySelect.value == "dolar") {
             currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
                 style: "currency",
@@ -139,7 +134,6 @@ function convertValues() {
 
     //SELECT BITOCOIN
     if (converterDe.value === "bitcoin") {
-        paragrafoCurrency.innerHTML = "BitCoin"
         if (currencySelect.value == "dolar") {
             currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
                 style: "currency",
@@ -177,7 +171,6 @@ function convertValues() {
 
 
     if (converterDe.value === "libra") {
-        paragrafoCurrency.innerHTML = "Libra"
         if (currencySelect.value === "dolar") {
             currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
                 style: "currency",
@@ -220,30 +213,31 @@ function changeCurrency() {
     const currencyName = document.querySelector("#currency-name")
     const currencyImage = document.querySelector(".bandeira-convertida")
     const bandeiraCorverte = document.querySelector(".bandeira-de")
+    const paragrafoCurrency = document.querySelector(".currency")
 
     //converterDe
-    if(converterDe.value = "real") {
-        currencyName.innerHTML = "Real"
+    if(converterDe.value === "real") {
+        paragrafoCurrency.innerHTML = "Real"
         bandeiraCorverte.src = "./assets/real.png"
     }
 
     if (converterDe.value === "dolar") {
-        currencyName.innerHTML = 'Dólar americano'
+        paragrafoCurrency.innerHTML = 'Dólar americano'
         bandeiraCorverte.src = "./assets/dolar.png"
     }
 
     if (converterDe.value === "euro") {
-        currencyName.innerHTML = 'Euro'
+        paragrafoCurrency.innerHTML = 'Euro'
         bandeiraCorverte.src = "./assets/euro.png"
     }
 
     if (converterDe.value === "bitcoin") {
-        currencyName.innerHTML = "BitCoin"
+        paragrafoCurrency.innerHTML = "BitCoin"
         bandeiraCorverte.src = "./assets/bitcoin.png"
     }
 
     if (converterDe.value === "libra") {
-        currencyName.innerHTML = "Libra"
+        paragrafoCurrency.innerHTML = "Libra"
         bandeiraCorverte.src = "./assets/libra.png"
     }
 
